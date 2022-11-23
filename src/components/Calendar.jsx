@@ -1,25 +1,10 @@
-import { useEffect, useState } from "react"
 import { Results } from "../components/Results"
+import { useAgeCalc } from "../hooks/useAgeCalc"
 
 export const Calendar = () => {
 
-  const [birthDate, setBirthDate] = useState("")
-  const [years, setYears] = useState()
-  const [months, setMonths] = useState()
-  const [days, setDays] = useState()
+  const { birthDate, years , months , days , handleDateChange , calcAge} = useAgeCalc()
 
-  
-  const handleDateChange = (e)=>{
-    setBirthDate(e.target.value)
-  }
-
-  const calcAge = () =>{
-    let date =  new Date(birthDate)
-    let currentDate = new Date()
-    setYears(currentDate.getFullYear() - date.getFullYear())
-    setMonths(currentDate.getMonth() - date.getMonth() )
-    setDays(currentDate.getDate() - date.getDate())
-  } 
 
   return (
     <>
