@@ -1,6 +1,5 @@
 import { Calendar } from "../components/Calendar"
 import { Header } from "../components/Header"
-import { Results } from "../components/Results"
 
 export const AgeCounterPage = () => {
   return (
@@ -8,7 +7,6 @@ export const AgeCounterPage = () => {
       <Header />
       <div className="body-content">
         <Calendar />
-        <Results />
       </div>
     </>
   )

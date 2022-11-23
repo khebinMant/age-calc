@@ -21,9 +21,9 @@ code {
   align-items: center;
 }
 .results-content{
+  color: aliceblue;
   border-radius: 2%;
-  width: 200px;
-  background-color: rgb(180, 180, 180);
+  width: auto;
   margin-top: 50px;
   display: flex;
   flex-direction: row;
@@ -36,6 +36,16 @@ code {
   justify-content: center;
   width: 200px;
   border-radius: 2%;
-  background-color: rgb(180, 180, 180);
+  background-color: rgb(109, 107, 107);
   margin-top: 50px;
+}
+.results-content div{
+  border-radius: 2%;
+  width: 90px;
+  height: auto;
+  margin: 10px 10px;
+  background-color: rgb(109, 107, 107);
+}
+.results-content div p{
+  text-align: center;
 }
