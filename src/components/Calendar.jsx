@@ -1,25 +1,34 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { Results } from "../components/Results"
 
 export const Calendar = () => {
 
-  const [currentDate, setCurrentDate] = useState()
+  const [birthDate, setBirthDate] = useState("")
+  const [years, setYears] = useState()
+  const [months, setMonths] = useState()
+  const [days, setDays] = useState()
 
+  
   const handleDateChange = (e)=>{
-    setCurrentDate(e.target.value)
+    setBirthDate(e.target.value)
   }
 
   const calcAge = () =>{
-
-  }
+    let date =  new Date(birthDate)
+    let currentDate = new Date()
+    setYears(currentDate.getFullYear() - date.getFullYear())
+    setMonths(currentDate.getMonth() - date.getMonth() )
+    setDays(currentDate.getDate() - date.getDate())
+  } 
 
   return (
     <>
       <h3>Ingrese su fecha de nacimiento: </h3>
       <div className="calendar-content">
-          <input type="date" name="fecha" onChange={handleDateChange}/>
-          <button>Calcular</button>
+          <input style={{marginRight:'20px'}} type="date" name="fecha" value={birthDate || ''} onChange={handleDateChange}/>
+          <button onClick={calcAge} >Calcular</button>
       </div>
-      <p>{currentDate}</p>
+      <Results props={{years, months, days}}/>
 
     </>
   )
